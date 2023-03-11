@@ -7,9 +7,13 @@ require('solidity-coverage');
 
 /** @type import('hardhat/config').HardhatUserConfig */
 
-const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL || "://eth-sepolia"
+// to connect to sepolia environment
+const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL || ""
+// to connect to metamask wallet
 const PRIVATE_KEY = process.env.PRIVATE_KEY || ""
+// to connect to etherscan to verify and publish contract
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || ""
+// to connect to coinmarketcap to get the conversions for gas reports
 const COIN_MARKET_CAP = process.env.COIN_MARKET_CAP || ""
 
 // diff bw localhost network and hardhat network
@@ -18,6 +22,8 @@ const COIN_MARKET_CAP = process.env.COIN_MARKET_CAP || ""
 
 module.exports = {
   defaultNetwort: "hardhat",
+  // we can have various environment networks on which we can run our contract on
+  // here we have 3 networks, sepolia, localhost, hardhat(default)
   networks:{
     sepolia: {
       url: SEPOLIA_RPC_URL,
@@ -40,6 +46,6 @@ module.exports = {
     noColors:true,
     currency: "USD",
     coinmarketcap: COIN_MARKET_CAP,
-    token: "MATIC",
+    // token: "MATIC",
   }
 };
