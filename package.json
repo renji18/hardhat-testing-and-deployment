@@ -1,0 +1,34 @@
+{
+  "name": "hardhat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sepolia": "npx hardhat run scripts/deploy.js --network sepolia",
+    "hardhat": "npx hardhat run scripts/deploy.js",
+    "localhost": "npx hardhat run scripts/deploy.js --network localhost",
+    "compile": "npx hardhat compile",
+    "defBlockNum": "npx hardhat block-number",
+    "sepoliaBlockNum": "npx hardhat block-number --network sepolia",
+    "node": "npx hardhat node",
+    "console": "npx hardhat console --network localhost",
+    "helper": "npx hardhat",
+    "test": "npx hardhat test",
+    "coverage": "npx hardhat coverage"
+  },
+  "keywords": [
+    "{sepolia: deploys the contract on sepolia network}, {hardhat: same shit with sepolia, except its on local hardhat network}, {localhost: same shit as sepolia, but which runs on localhost, different from hardhat}, {compile: used to compile the solidity contract to create ./artifacts and ./cache}, {defBlockNum: to run a custom plugin called block-number}, {sepoliaBlockNum: same shit with defBlockNum, but for the sepolia network}, {node: gives a list of all the demo accounts and private keys and also info about all the txn on LOCALHOST network}, {console: seriously, you know what it does}, {helper: displays all the commands or options available for hardhat}, {test: to run test cases}, {coverage: used to check for what part of codes is not being covered by test, for security}"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@nomiclabs/hardhat-etherscan": "^3.1.7",
+    "hardhat": "^2.13.0",
+    "hardhat-gas-reporter": "^1.0.9",
+    "solidity-coverage": "^0.8.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
